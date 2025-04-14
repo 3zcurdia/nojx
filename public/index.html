@@ -48,6 +48,12 @@
           As an initial version, NoJX will simply return the DOM and a
           screenshot, as that is what is currently needed.
         </p>
+
+        <pre>
+          curl -X "POST" "https://nojs-page.vercel.app/fetch" \
+               -H 'Content-Type: application/json; charset=utf-8' \
+               -d $'{"url": "https://news.ycombinator.com"}'
+        </pre>
       </div>
     </section>
   </body>
