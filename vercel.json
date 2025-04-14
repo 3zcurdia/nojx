@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "rewrites": [{ "source": "/", "destination": "/public/index.html" }]
+  "rewrites": [
+    { "source": "/", "destination": "/public/index.html" },
+    { "source": "/api/health", "destination": "/api/health.js" }
+  ]
 }
