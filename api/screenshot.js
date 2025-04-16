@@ -1,5 +1,5 @@
 import { initBrowser } from "../lib/browser.js";
-// import { screenshotPage } from "../lib/core.js";
+import { getScreenshot } from "../lib/core.js";
 
 export default async function handler(req, res) {
   const { url, timeout = 15000 } = req.body;
@@ -22,14 +22,13 @@ export default async function handler(req, res) {
     if (!browser) {
       throw new Error("Could not initialize browser after multiple attempts");
     }
-
+    const screenshot = await getScreenshot(browser, url, timeout);
     await browser.close();
-    res.status(200).json({ url: url });
+    res.set("Content-Type", "image/jpeg");
+    res.status(200).send(screenshot);
   } catch (error) {
     console.error("Error taking screenshot:", error);
-    // if (page) await page.close().catch(console.error);
     if (browser) await browser.close().catch(console.error);
-
     return res.status(500).json({
       error: "Failed to take screenshot",
       message: error.message,
