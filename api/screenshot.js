@@ -1,4 +1,4 @@
-import { initBrowser } from "./api/_browser.js";
+import { initBrowser } from "./_browser.js";
 import { screenshotPage } from "../lib/core.js";
 
 export default async function handler(req, res) {
