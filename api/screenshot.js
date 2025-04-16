@@ -1,5 +1,4 @@
-import { initBrowser } from "../lib/browser.js";
-import { getScreenshot } from "../lib/core.js";
+import { initBrowser, getScreenshot } from "../lib/core.js";
 
 export default async function handler(req, res) {
   const { url, timeout = 15000 } = req.body;
