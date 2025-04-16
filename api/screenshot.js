@@ -8,37 +8,34 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "URL is required" });
   }
 
-  let isInitializing = true;
-  let browser = await initBrowser();
-  if (!browser) {
-    browser = await initBrowser();
+  let browser = null;
+  try {
     let retries = 0;
     while (!browser && retries < 3) {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      if (!browser && !isInitializing) {
-        browser = await initBrowser();
+      browser = await initBrowser();
+      if (!browser) {
+        retries++;
+        await new Promise((resolve) => setTimeout(resolve, 2000));
       }
-      retries++;
     }
-    throw new Error("Could not initialize browser after multiple attempts");
+
+    if (!browser) {
+      throw new Error("Could not initialize browser after multiple attempts");
+    }
+
+    await browser.close();
+    res.status(200).json({ url: url });
+  } catch (error) {
+    console.error("Error taking screenshot:", error);
+    // if (page) await page.close().catch(console.error);
+    if (browser) await browser.close().catch(console.error);
+
+    return res.status(500).json({
+      error: "Failed to take screenshot",
+      message: error.message,
+    });
   }
-  isInitializing = false;
-
-  res.status(200).json({ url: url });
 }
-
-// if (!browser) {
-//   await initBrowser();
-//   let retries = 0;
-//   while (!browser && retries < 3) {
-//     await new Promise((resolve) => setTimeout(resolve, 2000));
-//     if (!browser && !isInitializing) {
-//       await initBrowser();
-//     }
-//     retries++;
-//   }
-
-// }
 
 // try {
 //   const image = await screenshotPage(browser, url, timeout);
