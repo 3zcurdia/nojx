@@ -2,7 +2,8 @@
   "version": 2,
   "rewrites": [
     { "source": "/", "destination": "/public/index.html" },
-    { "source": "/api/up", "destination": "/api/up.js" }
-    { "source": "/api/fetch", "destination": "/api/fetch.js" }
+    { "source": "/api/up", "destination": "/api/up.js" },
+    { "source": "/api/fetch", "destination": "/api/fetch.js" },
+    { "source": "/api/screenshot", "destination": "/api/screenshot.js" }
   ]
 }
