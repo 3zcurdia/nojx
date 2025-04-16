@@ -10,7 +10,16 @@ export default async function handler(req, res) {
 
   let browser = await initBrowser();
   if (!browser) {
-    throw new Error("Could not initialize browser");
+    browser = await initBrowser();
+    let retries = 0;
+    while (!browser && retries < 3) {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      if (!browser && !isInitializing) {
+        browser = await initBrowser();
+      }
+      retries++;
+    }
+    throw new Error("Could not initialize browser after multiple attempts");
   }
 
   res.status(200).json({ url: url });
