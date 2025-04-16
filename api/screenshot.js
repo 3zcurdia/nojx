@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     }
     const screenshot = await getScreenshot(browser, url, timeout);
     await browser.close();
-    res.set("Content-Type", "image/jpeg");
+    res.setHeader("Content-Type", "image/jpeg");
     res.status(200).send(screenshot);
   } catch (error) {
     console.error("Error taking screenshot:", error);
