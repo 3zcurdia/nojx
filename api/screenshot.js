@@ -8,6 +8,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "URL is required" });
   }
 
+  let isInitializing = true;
   let browser = await initBrowser();
   if (!browser) {
     browser = await initBrowser();
@@ -21,6 +22,7 @@ export default async function handler(req, res) {
     }
     throw new Error("Could not initialize browser after multiple attempts");
   }
+  isInitializing = false;
 
   res.status(200).json({ url: url });
 }
