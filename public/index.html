@@ -17,6 +17,10 @@
       src="https://kit.fontawesome.com/238d584d83.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.css"
+    />
   </head>
   <body>
     <section class="hero is-medium has-background-info-soft">
@@ -80,11 +84,11 @@
       </div>
       <div class="columns is-desktop">
         <div class="column content">
-          <pre>
+          <pre><code class="language-bash">
   curl -X "POST" "https://nojx-page.vercel.app/api/screenshot" \
        -H 'Content-Type: application/json; charset=utf-8' \
        -d $'{"url": "https://www.google.com/"}'
-          </pre>
+          </code></pre>
         </div>
         <div class="column">
           <img class="image is-16by9" src="/screenshot.jpg" loading="lazy" />
@@ -92,14 +96,14 @@
       </div>
       <div class="columns is-desktop">
         <div class="column content">
-          <pre>
+          <pre><code class="language-bash">
   curl -X "POST" "https://nojx-page.vercel.app/api/fetch" \
        -H 'Content-Type: application/json; charset=utf-8' \
        -d $'{"url": "https://news.ycombinator.com/"}'
-          </pre>
+          </code></pre>
         </div>
         <div class="column content">
-          <pre>
+          <pre><code class="language-json">
             {
               "html":"&lt;html lang=...",
               "colors": {
@@ -108,9 +112,11 @@
                 "colors":{"#828282":689,"#f6f6ef":1,"#ff6600":2,"#222222":3,"#ffffff":1}
               }
             }
-          </pre>
+          </code></pre>
         </div>
       </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
   </body>
 </html>
