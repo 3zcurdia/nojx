@@ -1,6 +1,6 @@
 {
   "name": "nojx",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "No JS needed to scrape a site, just an API call",
   "main": "index.js",
   "repository": "http://github.com/3zcurdia/nojx",

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { startServer } from "../src/server.js";
 
 export async function fetchPageData(url, timeout = 15000) {
@@ -46,5 +47,6 @@ if (args[0] === "server" || args[0] === "s") {
     process.exit(1);
   }
 } else {
+  console.log("NoJX v0.1.0");
   console.error("Usage: nojx <url> [--colors] | nojx server");
 }
