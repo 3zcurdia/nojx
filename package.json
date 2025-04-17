@@ -7,6 +7,9 @@
   "author": "Luis Ezcurdia <ing.ezcurdia@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "bin": {
+    "nojx": "./bin/cli.js"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
