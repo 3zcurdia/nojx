@@ -1,8 +1,7 @@
 {
   "name": "nojx",
   "version": "0.1.0",
-  "description": "No JS needed to scrape a site, just an API call",
-  "main": "index.js",
+  "description": "Webscrapping without JS, just an api call or a CLI command.",
   "repository": "http://github.com/3zcurdia/nojx",
   "author": "Luis Ezcurdia <ing.ezcurdia@gmail.com>",
   "license": "MIT",
