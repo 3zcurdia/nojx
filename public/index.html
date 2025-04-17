@@ -78,7 +78,28 @@
           </pre>
         </div>
         <div class="column">
-          <img class="image is-16by9" src="/screenshot.png" />
+          <img class="image is-16by9" src="/screenshot.jpg" />
+        </div>
+      </div>
+      <div class="columns is-desktop">
+        <div class="column content">
+          <pre>
+  curl -X "POST" "https://nojx-page.vercel.app/api/fetch" \
+       -H 'Content-Type: application/json; charset=utf-8' \
+       -d $'{"url": "https://www.google.com/"}'
+          </pre>
+        </div>
+        <div class="column content">
+          <pre>
+            {
+              "html":"<html lang=...",
+              "colors": {
+                "background-colors":{"#f6f6ef":1,"#ff6600":2,"#ffffff":1},
+                "foreground-colors":{"#828282":689,"#222222":3},
+                "colors":{"#828282":689,"#f6f6ef":1,"#ff6600":2,"#222222":3,"#ffffff":1}
+              }
+            }
+          </pre>
         </div>
       </div>
     </section>
