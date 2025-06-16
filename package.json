@@ -16,7 +16,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@sparticuz/chromium": "^133.0.0",
+    "@sparticuz/chromium": "^137.0.1",
     "express": "^5.1.0",
     "puppeteer": "^24.6.0",
     "puppeteer-core": "^24.6.0"
