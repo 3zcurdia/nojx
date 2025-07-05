@@ -2,12 +2,15 @@
   "name": "nojx",
   "version": "0.1.3",
   "description": "Webscrapping without JS, just an api call or a CLI command.",
-  "repository": "http://github.com/3zcurdia/nojx",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/3zcurdia/nojx.git"
+  },
   "author": "Luis Ezcurdia <ing.ezcurdia@gmail.com>",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "nojx": "./bin/cli.js"
+    "nojx": "bin/cli.js"
   },
   "scripts": {
     "lint": "eslint .",
