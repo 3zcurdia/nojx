@@ -128,13 +128,13 @@
     tar-fs "^3.0.8"
     yargs "^17.7.2"
 
-"@sparticuz/chromium@^137.0.1":
-  version "137.0.1"
-  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-137.0.1.tgz#7576d271da6e172505af89285a2e69149bcb8f88"
-  integrity sha512-9ixW23xjzIgSwBPLhWFOnrJNsnEw4dQWZqGzBCFGwGVuBPkNiJHO5VAGKezXj81J0wMYwP04tLlJFjsN5z4ROw==
+"@sparticuz/chromium@^138.0.1":
+  version "138.0.1"
+  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-138.0.1.tgz#5052e070509f54ca93ffe738a514e6c0883e8dff"
+  integrity sha512-Ub58jeYFc/ePyWvVLqKzGE4/F/nL8KcsUHFNHNxDcqFogGTol4UHiwjZ8gLS4oGfbbT1ZPQHQ9hM3aBrqncBpQ==
   dependencies:
     follow-redirects "^1.15.9"
-    tar-fs "^3.0.9"
+    tar-fs "^3.1.0"
 
 "@tootallnate/quickjs-emscripten@^0.23.0":
   version "0.23.0"
@@ -1518,10 +1518,10 @@ synckit@^0.11.7:
   dependencies:
     "@pkgr/core" "^0.2.4"
 
-tar-fs@^3.0.8, tar-fs@^3.0.9:
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-3.0.10.tgz#60f8ccd60fe30164bdd3d6606619650236ed38f7"
-  integrity sha512-C1SwlQGNLe/jPNqapK8epDsXME7CAJR5RL3GcE6KWx1d9OUByzoHVcbu1VPI8tevg9H8Alae0AApHHFGzrD5zA==
+tar-fs@^3.0.8, tar-fs@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-3.1.0.tgz#4675e2254d81410e609d91581a762608de999d25"
+  integrity sha512-5Mty5y/sOF1YWj1J6GiBodjlDc05CUR8PKXrsnFAiSG0xA+GHeWLovaZPYUDXkH/1iKRf2+M5+OrRgzC7O9b7w==
   dependencies:
     pump "^3.0.0"
     tar-stream "^3.1.5"
