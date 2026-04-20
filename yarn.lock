@@ -106,11 +106,10 @@
     yargs "^17.7.2"
 
 "@sparticuz/chromium@^147.0.0":
-  version "147.0.0"
-  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-147.0.0.tgz#42beba59b8e78795d9c6cb8ccf11c328e7daba78"
-  integrity sha512-4ZKeAQQa8up2mt675qSitztLdbQrlf8BKdC5naeap+5Mv1OV1OlJdPoU+EJC/p5sQUJUQmN4r+q5+EhaaOUHpQ==
+  version "147.0.2"
+  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-147.0.2.tgz#cad432e0d6e52383aff7ae31427ad0256022052a"
+  integrity sha512-oqXyPAlGQuT9wdZAhcx4nmhehVgEsDc2adL/+FlX8qsLh/YyOgl9GQp8dPMDIBRmktxgA9c1QSNJIQUj2UeHhQ==
   dependencies:
-    follow-redirects "^1.15.11"
     tar-fs "^3.1.2"
 
 "@tootallnate/quickjs-emscripten@^0.23.0":
@@ -740,11 +739,6 @@ flatted@^3.2.9:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.4.2.tgz#f5c23c107f0f37de8dbdf24f13722b3b98d52726"
   integrity sha512-PjDse7RzhcPkIJwy5t7KPWQSZ9cAbzQXcafsetQoD7sOJRQlGikNbx7yZp2OotDnJyrDcbyRq3Ttb18iYOqkxA==
-
-follow-redirects@^1.15.11:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.16.0.tgz#28474a159d3b9d11ef62050a14ed60e4df6d61bc"
-  integrity sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==
 
 forwarded@0.2.0:
   version "0.2.0"
