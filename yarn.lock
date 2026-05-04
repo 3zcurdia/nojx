@@ -105,10 +105,10 @@
     tar-fs "^3.1.1"
     yargs "^17.7.2"
 
-"@sparticuz/chromium@^147.0.0":
-  version "147.0.2"
-  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-147.0.2.tgz#cad432e0d6e52383aff7ae31427ad0256022052a"
-  integrity sha512-oqXyPAlGQuT9wdZAhcx4nmhehVgEsDc2adL/+FlX8qsLh/YyOgl9GQp8dPMDIBRmktxgA9c1QSNJIQUj2UeHhQ==
+"@sparticuz/chromium@^148.0.0":
+  version "148.0.0"
+  resolved "https://registry.yarnpkg.com/@sparticuz/chromium/-/chromium-148.0.0.tgz#df1b1b21703ec431ada5dab147e286271d0b2d01"
+  integrity sha512-na5beDSZkrlcEWEMt+eHu4Xe+MLUgCtHBjHaXGsNaQu5tJWwXE+McxAcMtyumEM/JzXrxGpkO5vAPD9TWhil3g==
   dependencies:
     tar-fs "^3.1.2"
 
