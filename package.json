@@ -19,7 +19,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@sparticuz/chromium": "^148.0.0",
+    "@sparticuz/chromium": "^149.0.0",
     "express": "^5.1.0",
     "puppeteer": "^25.0.4",
     "puppeteer-core": "^25.0.4"
