@@ -24,9 +24,9 @@ nojx <url> --scrape '<jsonString>'
 nojx <url> --scrape-file <path>
 ```
 
-* `--colors` prints the dominant colors as JSON. Mutually exclusive with `--scrape` / `--scrape-file`.
-* `--scrape` takes an inline JSON string describing selectors.
-* `--scrape-file` takes a path to a JSON file with the same schema. Mutually exclusive with `--scrape`.
+- `--colors` prints the dominant colors as JSON. Mutually exclusive with `--scrape` / `--scrape-file`.
+- `--scrape` takes an inline JSON string describing selectors.
+- `--scrape-file` takes a path to a JSON file with the same schema. Mutually exclusive with `--scrape`.
 
 Output for scraping is always JSON (`stdout`) and suppresses HTML. Missing single values return `null`, missing lists return `[]`.
 
@@ -62,13 +62,13 @@ Selectors are a JSON object where each key becomes a key in the output. Each val
 }
 ```
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `css` | yes | CSS selector, scoped to `document` at top level or to parent element when nested |
-| `type` | no | `"value"` (single, default) returns first match or `null`; `"list"` returns all matches (`[]` if none) |
-| `value` | no | Extraction mode, default `"text"`: `"text"` = `textContent.trim()`, `"html"` = `innerHTML`, `"attr:href"` = `getAttribute("href")`, `"attr"` + `"attr":"src"` = same, `"value"` = input value |
-| `attr` | no | Attribute name when `value` is `"attr"` |
-| `fields` | no | Nested object for structured extraction. When present, each parent match becomes an object. Supports deep nesting |
+| Field    | Required | Description                                                                                                                                                                                   |
+| -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `css`    | yes      | CSS selector, scoped to `document` at top level or to parent element when nested                                                                                                              |
+| `type`   | no       | `"value"` (single, default) returns first match or `null`; `"list"` returns all matches (`[]` if none)                                                                                        |
+| `value`  | no       | Extraction mode, default `"text"`: `"text"` = `textContent.trim()`, `"html"` = `innerHTML`, `"attr:href"` = `getAttribute("href")`, `"attr"` + `"attr":"src"` = same, `"value"` = input value |
+| `attr`   | no       | Attribute name when `value` is `"attr"`                                                                                                                                                       |
+| `fields` | no       | Nested object for structured extraction. When present, each parent match becomes an object. Supports deep nesting                                                                             |
 
 #### Product page example
 
@@ -78,7 +78,11 @@ Selectors are a JSON object where each key becomes a key in the output. Each val
 {
   "title": { "css": "h1.page-title", "type": "value", "value": "text" },
   "price": { "css": ".price", "type": "value", "value": "text" },
-  "image": { "css": ".product-image img", "type": "value", "value": "attr:src" },
+  "image": {
+    "css": ".product-image img",
+    "type": "value",
+    "value": "attr:src"
+  },
   "description": { "css": ".description", "type": "value", "value": "html" },
   "breadcrumbs": { "css": ".breadcrumb a", "type": "list", "value": "text" },
   "related": {
@@ -106,17 +110,15 @@ Output:
   "image": "https://example.com/img.jpg",
   "description": "<b>Bold</b> text",
   "breadcrumbs": ["Home", "Shop"],
-  "related": [
-    { "name": "Related 1", "price": "$9.99", "url": "/p/1" }
-  ]
+  "related": [{ "name": "Related 1", "price": "$9.99", "url": "/p/1" }]
 }
 ```
 
 Notes:
 
-* Child `css` inside `fields` is queried relative to each parent element, so `fields` can be nested arbitrarily.
-* Use `type: "value"` with `fields` for a single nested object, `type: "list"` for an array of objects.
-* On invalid JSON, missing `css`, or invalid `type` the CLI exits with code 1 and prints `Error:` to `stderr`.
+- Child `css` inside `fields` is queried relative to each parent element, so `fields` can be nested arbitrarily.
+- Use `type: "value"` with `fields` for a single nested object, `type: "list"` for an array of objects.
+- On invalid JSON, missing `css`, or invalid `type` the CLI exits with code 1 and prints `Error:` to `stderr`.
 
 ---
 
