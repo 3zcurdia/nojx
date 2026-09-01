@@ -28,11 +28,8 @@ npm run format:check
 
 ```
 nojx/
-├── api/           # Vercel serverless API handlers
 ├── bin/           # CLI entry point (cli.js)
 ├── lib/           # Core business logic (core.js)
-├── src/           # Server setup (server.js)
-├── public/        # Static assets
 └── package.json   # Dependencies and scripts
 ```
 
@@ -68,11 +65,9 @@ nojx/
 Example:
 
 ```javascript
-import express from "express";
 import puppeteer from "puppeteer";
 
 import { initBrowser } from "../lib/core.js";
-import fetchHandler from "../api/fetch.js";
 ```
 
 ### Error Handling
@@ -80,29 +75,11 @@ import fetchHandler from "../api/fetch.js";
 - Use try/catch for async operations
 - Always clean up resources (close browsers, pages)
 - Log errors with console.error
-- Return meaningful error messages in API responses
 - Use retry logic for flaky operations (browser initialization)
-
-### API Handlers
-
-- Export as default async function
-- Use Express req/res pattern
-- Return JSON with appropriate HTTP status codes
-- Validate required parameters early
-- Structure: validation → try/catch → cleanup → response
-
-### Browser Automation
-
-- Always set viewport dimensions
-- Set user agent string to avoid detection
-- Use appropriate wait conditions (networkidle2, domcontentloaded)
-- Close pages after use to prevent memory leaks
-- Handle browser disconnection events
 
 ### CLI Patterns
 
 - Use process.argv for argument parsing
-- Support both long and short commands (server/s)
 - Exit with code 1 on errors
 - Output to stdout (results) and stderr (errors)
 
@@ -112,13 +89,6 @@ import fetchHandler from "../api/fetch.js";
 - Validate all user inputs (URLs)
 - Use sandbox mode for browser
 - Set reasonable timeouts (default: 15000ms)
-
-### Environment Handling
-
-- Check NODE_ENV for production vs development
-- Use different browser configs per environment
-- Production: Use @sparticuz/chromium with puppeteer-core
-- Development: Use standard puppeteer
 
 ### Comments
 
