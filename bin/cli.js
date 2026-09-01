@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import { startServer } from "../src/server.js";
-
 export async function fetchPageData(url, timeout = 15000) {
   const { initBrowser, getPageData } = await import("../lib/core.js");
 
@@ -31,9 +29,7 @@ export async function fetchPageData(url, timeout = 15000) {
 
 const args = process.argv.slice(2);
 
-if (args[0] === "server" || args[0] === "s") {
-  startServer();
-} else if (args[0]) {
+if (args[0]) {
   const url = args[0];
   const onlyColors = args.includes("--colors");
 
@@ -48,5 +44,5 @@ if (args[0] === "server" || args[0] === "s") {
   }
 } else {
   console.log("NoJX v0.1.0");
-  console.error("Usage: nojx <url> [--colors] | nojx server");
+  console.error("Usage: nojx <url> [--colors]");
 }
